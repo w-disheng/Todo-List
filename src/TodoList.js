@@ -13,13 +13,19 @@ class TodoList extends Component {
     this.inputRef = createRef()
   }
 
-  // componentDidMount() {
-  //   axios.get('https://jsonplaceholder.typicode.com/todos')
-  //        .then( (res) => {
-  //          const data = res.data;
-  //          console.log(data)
-  //        })
-  // }
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+         .then( (res) => {
+           const task = res.data.map( (task) => {
+             return (
+               task.title
+             )
+           })
+           this.setState( () => ({
+             list: [...task]
+           })) 
+         })
+  }
 
   
   render() {
