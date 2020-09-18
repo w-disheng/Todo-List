@@ -52,7 +52,7 @@ class TodoList extends Component {
         key={todoItem}
         index={index} 
         item={todoItem}
-        deleteItem={this.handleBtnDelete}
+        deleteItem={() => this.handleBtnDelete(index)}
       />
     )
   )

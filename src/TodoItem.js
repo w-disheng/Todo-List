@@ -28,7 +28,6 @@ class TodoItem extends Component {
 
     render() {
         const { item, test } = this.props
-        console.log("child Render")
         return (
             <div className="list">
                 <li>{test} - {item}</li>
